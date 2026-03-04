@@ -1,23 +1,20 @@
-# 🛡️ Cybersecurity Lab: Network Defense Tools
+# 🛡️ Cybersecurity & Network Analysis Arsenal
 
-This repository is a collection of Python-based security tools developed during my cybersecurity certification journey. Each tool is designed to demonstrate core networking principles and automated security auditing.
+A collection of professional-grade Python tools designed for network reconnaissance, deep packet analysis, and security auditing. These scripts are engineered using Python's standard library to ensure high performance, zero external dependencies, and maximum portability across Linux (Kali) and Windows environments.
 
-## 🚀 Pro TCP Client & Banner Grabber
-`pro_tcp_client.py`
+---
 
-A professional-grade TCP client designed to establish connections with remote hosts and retrieve raw server responses. This is an essential tool for **Service Fingerprinting** and **Reconnaissance**.
+## 🕵️ 1. Raw Socket Sniffer & Packet Analyzer (`pro_sniffer.py`)
 
-### Key Features
-- **Dynamic Argument Parsing:** Uses the `argparse` module to allow users to specify targets and ports directly from the terminal.
-- **Service Identification:** Retrieves HTTP headers and server banners to identify running services and versions.
-- **Robust Error Handling:** Managed exceptions for timeouts and connection failures.
-- **Clean Code:** Adheres to Python's "Snake Case" naming conventions and best practices.
+A deep-dive network monitoring tool that interacts directly with the OS network stack. This script demonstrates the ability to bypass high-level abstractions and handle raw binary data from the wire.
 
-### 🛠️ Installation & Usage
-No external libraries are required (uses built-in `socket` and `argparse` modules).
+### Key Technical Features
+* **Byte-Level Header Unpacking:** Uses the `struct` module to manually dissect the 20-byte IPv4 header with surgical precision.
+* **Protocol Identification:** Real-time decoding of IANA protocol numbers to identify ICMP, TCP, and UDP traffic.
+* **Network Layer Forensics:** Extracts raw Source and Destination IP addresses directly from the IP header.
+* **CLI Integration:** Fully automated via `argparse` for professional terminal-based workflows.
 
-1. Clone or download the script.
-2. Run it from your terminal:
-
+### Usage
+*Note: Requires root/administrator privileges to bind to raw sockets.*
 ```bash
-python3 pro_tcp_client.py --target <TARGET_IP_OR_DOMAIN> --port <PORT_NUMBER>
+sudo python3 pro_sniffer.py --interface <YOUR_IP_ADDRESS>

@@ -4,7 +4,7 @@ import requests
 
 # --- CONFIGURATION ---
 # Paste your Discord Webhook URL inside the quotes
-WEBHOOK_URL = "https://discord.com/api/webhooks/1482136619611062473/6UxG9utuObV-Ei1R7niG5233AffIcqM3-ErDTBNnv0oG-rn3e0Pc21RKXZGqclFmpYrr"
+WEBHOOK_URL = "YOUR_DISCORD_WEBHOOK_URL_HERE"
 CHECK_INTERVAL = 60  # How often to check the registry (in seconds)
 
 def get_registry_state():
